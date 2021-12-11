@@ -6,10 +6,12 @@ public class Main {
     public static void main(String[] args) {
         String text = "maybe your ad could be here";
         Function<String, List<String>> function = (a) ->
-                Arrays.stream(a.split(" ")).sorted()
+                Arrays.stream(a.split(" "))
+                        .sorted()
                         .distinct()
                         .toList();
-        function.apply(text).forEach(System.out::println);
+        function.apply(text)
+                .forEach(System.out::println);
     }
 }
 //Использовала реализацию функционального интерфейса Function и монады в виде Stream API.
